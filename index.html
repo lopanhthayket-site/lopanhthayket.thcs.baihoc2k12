@@ -1,0 +1,224 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khoá luyện thi THCS - Lớp Anh thầy Kết</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#fff8f0;
+    margin:0;
+    text-align:center;
+}
+
+header{
+    background:#EA7B7B;
+    color:white;
+    padding:30px;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.toc-container{
+    max-width:1600px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+h2{
+    color:#7a4e3e;
+}
+
+.toc-item{
+    display:grid;
+    grid-template-columns:2fr 1fr 0.8fr 0.8fr 4fr;
+    gap:10px;
+    margin:10px 0;
+}
+
+.toc-header div{
+    background:#ffe5d9;
+    padding:12px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.lesson-link,
+.study-session,
+.study-time,
+.video-link,
+.homework-link{
+    padding:12px;
+    border-radius:10px;
+    text-decoration:none;
+    color:#333;
+    display:flex;
+    align-items:center;
+    transition:.3s;
+}
+
+.lesson-link{
+    background:#a0e7e5;
+    justify-content:flex-start;
+    text-align:left;
+    padding-left:16px;
+}
+
+.study-session{
+    background:#ffe0ac;
+    justify-content:center;
+}
+
+.study-time{
+    background:#ffd6e0;
+    justify-content:center;
+    text-align:center;
+}
+
+.video-link{
+    background:#ffd6a5;
+    justify-content:center;
+}
+
+.homework-link{
+    background:#f8f9fa;
+    font-weight:normal;
+    text-align:left;
+    line-height:1.6;
+}
+
+.toc-item.lesson:hover .lesson-link,
+.toc-item.lesson:hover .study-session,
+.toc-item.lesson:hover .study-time,
+.toc-item.lesson:hover .video-link,
+.toc-item.lesson:hover .homework-link{
+    background:#fdffb6;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 25px;
+    background:#ffb3ba;
+    color:#333;
+    text-decoration:none;
+    border-radius:10px;
+}
+
+footer{
+    margin-top:40px;
+    padding:15px;
+    background:#fff0e1;
+}
+
+@media(max-width:768px){
+    .toc-header{
+        display:none;
+    }
+
+    .toc-item{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+Luyện thi THCS - Lớp Anh thầy Kết
+</header>
+
+<div class="toc-container">
+
+<h2>📚 Chương trình luyện thi 2k12</h2>
+
+<div class="toc-item toc-header">
+    <div>Bài học</div>
+    <div>Ca học</div>
+    <div>Thời gian</div>
+    <div>Bài giảng</div>
+    <div>BTVN / Ghi chú</div>
+</div>
+
+<div id="lesson-list"></div>
+
+<a href="https://ketng91.github.io/lopanhthayket_thpt/" class="back-btn">
+⬅ Quay về trang chính
+</a>
+
+</div>
+
+<footer>
+© 2026 Lớp Anh thầy Kết. All rights reserved.
+</footer>
+
+<script>
+
+const lessons = [
+
+{
+    lesson:"Lesson 1: Grammar: Thành phần câu; Reading",
+    lessonLink:"",
+    session:"Ca chiều 2",
+    time:"T4 03/06<br>9:30 - 11:00",
+    video:"",
+    homework:"",
+    note:"Học từ vựng bài 1 và Grammar. Hoàn thành bài tập còn trên lớp."
+},
+{
+    lesson:"Lesson 2: Reading; Grammar: Danh từ",
+    lessonLink:"",
+    session:"Ca chiều 2",
+    time:"T6 05/06<br>9:30 - 11:00",
+    video:"",
+    homework:"",
+    note:"Học từ vựng bài 2 và Grammar. Hoàn thành bài tập còn trên lớp."
+},
+
+
+];
+
+const container = document.getElementById("lesson-list");
+
+lessons.forEach(item => {
+
+container.innerHTML += `
+<div class="toc-item lesson">
+
+<a class="lesson-link" href="${item.lessonLink}" target="_blank">
+${item.lesson}
+</a>
+
+<div class="study-session">
+${item.session}
+</div>
+
+<div class="study-time">
+${item.time}
+</div>
+
+<a class="video-link" href="${item.video}" target="_blank">
+Video
+</a>
+
+<a class="homework-link" href="${item.homework}" target="_blank">
+${item.note}
+</a>
+
+</div>
+`;
+
+});
+
+</script>
+
+</body>
+</html>
+```
