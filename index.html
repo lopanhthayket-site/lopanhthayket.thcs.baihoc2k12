@@ -414,7 +414,7 @@ const lessons = [
     lesson:"Lesson 28: Dạng sắp xếp giao tiếp - Tìm từ đồng/trái nghĩa; Luyện đề ĐGNL 1",
     lessonLink:"",
     session:"Ca sáng",
-    time:"CN 09/09<br>9:00-10:30",    
+    time:"CN 09/08<br>9:00-10:30",    
     video:"",
     homework:"",
     note:"Học từ vựng; Ôn Grammar đã học. Hoàn thành BTVN."
@@ -463,7 +463,21 @@ const lessons = [
 
 const container = document.getElementById("lesson-list");
 
+// Xếp bài học theo ngày: mới nhất → cũ nhất
+lessons.sort((a, b) => {
+    const getDate = (time) => {
+        const match = time.match(/(\d{2})\/(\d{2})/);
+        if (!match) return new Date(0);
+
+        const [, day, month] = match;
+        return new Date(2026, Number(month) - 1, Number(day));
+    };
+
+    return getDate(b.time) - getDate(a.time);
+});
+
 lessons.forEach(item => {
+
 
 container.innerHTML += `
 <div class="toc-item lesson">
